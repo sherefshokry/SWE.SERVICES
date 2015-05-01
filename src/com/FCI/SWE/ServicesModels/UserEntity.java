@@ -125,8 +125,11 @@ public class UserEntity {
 		employee.setProperty("name", this.name);
 		employee.setProperty("email", this.email);
 		employee.setProperty("password", this.password);
-		employee.setProperty("GroupChatID", new ArrayList<Pair<String, String> >() );
-		
+
+ArrayList <String> lst =new  ArrayList<String>();
+lst.add("sheref");
+employee.setProperty("GroupChatID", lst );
+	
 		datastore.put(employee);
 		txn.commit();
 		}finally{
@@ -135,6 +138,5 @@ public class UserEntity {
 		    }
 		}
 		return true;
-
 	}
 }

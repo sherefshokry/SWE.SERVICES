@@ -32,7 +32,6 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 
-
 /**
  * This class contains REST services, also contains action function for web
  * application
@@ -62,13 +61,18 @@ public class UserServices {
 	 * @return Status json
 	 */
 	@POST
-	@Path("/RegistrationService/")
+	@Path("/RegistrationService")
 	public String registrationService(@FormParam("uname") String uname,
 			@FormParam("email") String email, @FormParam("password") String pass) {
+	
+		JSONObject object = new JSONObject();
+		object.put("email",email);
+		object.put("Status", "OK");
+		/*
 		UserEntity user = new UserEntity(uname, email, pass);
 		user.saveUser();
 		JSONObject object = new JSONObject();
-		object.put("Status", "OK");
+		object.put("Status", "OK");*/
 		return object.toString();
 	}
 	
@@ -80,16 +84,19 @@ public class UserServices {
 	 * @param pass provided user password
 	 * @return user in json format
 	 */
+	
 	@POST
 	@Path("/LoginService/")
 	public String loginService(@FormParam("uname") String uname,
 			@FormParam("password") String pass) {
+	
 		JSONObject object = new JSONObject();
 		UserEntity user = UserEntity.getUser(uname, pass);
 		if (user == null) {
 			object.put("Status", "Failed");
 
-		} else {
+		}
+		else {
 			object.put("Status", "OK");
 			object.put("name", user.getName());
 			object.put("email", user.getEmail());

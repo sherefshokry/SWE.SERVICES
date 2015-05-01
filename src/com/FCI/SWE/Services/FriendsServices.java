@@ -1,6 +1,5 @@
 
 package com.FCI.SWE.Services;
-
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -18,6 +17,14 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
+
+
+
+/*
+Query gaeQuery = new Query("Friends");
+PreparedQuery pq = datastore.prepare(gaeQuery);
+JSONObject json = new JSONObject();
+*/
 
 @Path("/")
 @Produces(MediaType.TEXT_PLAIN)
@@ -76,7 +83,6 @@ public String searchUser(String Email) {
 		return object.toString();
 	}	
 
-	
 	@POST
 	@Path("/FriendRequest")
 	public String FriendRequest(@FormParam("Esource") String Esource,
@@ -86,6 +92,5 @@ public String searchUser(String Email) {
 		JSONObject object = new JSONObject();
 		object.put("Status", "OK");
 		return object.toString();
-	}
-	
+	}	
 }
