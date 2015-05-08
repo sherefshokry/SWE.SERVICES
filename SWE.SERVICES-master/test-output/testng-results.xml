@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="49" started-at="2015-05-08T17:18:38Z" finished-at="2015-05-08T17:18:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="49" started-at="2015-05-08T17:18:38Z" finished-at="2015-05-08T17:18:38Z">
+      <class name="test_Services.TestMessages">
+        <test-method status="PASS" signature="testSendGroupMessage()[pri:0, instance:test_Services.TestMessages@7dfae7b1]" name="testSendGroupMessage" duration-ms="27" started-at="2015-05-08T20:18:38Z" finished-at="2015-05-08T20:18:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSendGroupMessage -->
+        <test-method status="PASS" signature="testSendSingleMessage()[pri:0, instance:test_Services.TestMessages@7dfae7b1]" name="testSendSingleMessage" duration-ms="1" started-at="2015-05-08T20:18:38Z" finished-at="2015-05-08T20:18:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSendSingleMessage -->
+      </class> <!-- test_Services.TestMessages -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
